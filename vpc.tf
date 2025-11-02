@@ -11,8 +11,8 @@ module "vpc" {
 
   vpc_tags=var.vpc_tags
 
+  is_peering_required = var.is_peering_required 
   
-
 }
 
 output "vpc_id" {
