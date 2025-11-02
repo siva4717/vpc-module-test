@@ -1,21 +1,21 @@
+
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 6.0"
+      source = "hashicorp/aws"
+      version = "6.16.0"
     }
   }
 
   backend "s3" {
-    bucket = "msgd-daws-86s"
+    bucket = "msgd-remote-state-terraform"
     key    = "vpc-module-demo"
     region = "us-east-1"
-    use_lockfile = false
+    use_lockfile = true
     encrypt = true
   }
 }
 
-# Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
 }
